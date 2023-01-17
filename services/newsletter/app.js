@@ -14,7 +14,7 @@ async function processMessage(msg) {
             port: 587,
             auth: {
                 user: "jubbaapplication@outlook.com",
-                    pass:"*****"
+                    pass:"2468gclm"
             }
         })
         const mailOptions = {
