@@ -20,3 +20,9 @@ FROM base AS report-service
 ADD  services/report/ .
 RUN npm install --only=production 
 CMD [ "node", "app.js" ]
+
+FROM base AS newsletter-service
+ADD  services/newsletter/ .
+RUN npm install --only=production 
+CMD [ "node", "app.js" ]
+

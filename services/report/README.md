@@ -30,3 +30,29 @@ Obs: Este é um exemplo de como pode ser criado o serviço de report, sinta-se a
     }
 }
 ```
+
+1. Adiciona dependencia 
+    ```
+        package.json
+    ```
+2. Cria configuração de conexão e do canal que realiza as tarefas
+    ```
+        rabbitmq-service.js
+    ```
+3. require('dotenv').config({ path: path.resolve(__dirname, '.env') }) -> pega as varia. de amb.
+        updateReport -> adiciona o produto
+    processMessage -> envia a mensagem para o uptadereport
+    consume -> pega a mensagem enviada no Rabbit para ser processada
+    ```
+        app.js
+    ```
+4. Configura o container da newsletter
+
+    ```
+        docker-compose.yml
+    ```
+5. Instala as dependencias/config. do node
+
+    ```
+        Dockerfile
+    ```

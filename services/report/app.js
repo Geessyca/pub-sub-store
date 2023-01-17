@@ -14,13 +14,12 @@ async function updateReport(products) {
             report[product.name]++;
         }
     }
-
+    console.log(report)
 }
 
 async function processMessage(msg) {
     const reportData = JSON.parse(msg.content)
     updateReport(reportData.products)
-    printReport()
 }
 
 async function consume() {

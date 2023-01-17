@@ -61,7 +61,6 @@ services:
     depends_on:
       q-rabbitmq:
         condition: service_healthy
-
   report-service:
     container_name: report-service
     build:
@@ -72,6 +71,19 @@ services:
       - q-rabbitmq-network
     env_file:
       - services/report/.env
+    depends_on:
+      q-rabbitmq:
+        condition: service_healthy
+  newsletter-service:
+    container_name: newsletter-service
+    build:
+      context: .
+      target: newsletter-service
+    restart: unless-stopped
+    networks:
+      - q-rabbitmq-network
+    env_file:
+      - services/newsletter/.env
     depends_on:
       q-rabbitmq:
         condition: service_healthy
